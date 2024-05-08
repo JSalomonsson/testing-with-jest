@@ -2,4 +2,4 @@
 
 A jest and npm lab session
 
-update
+An update
