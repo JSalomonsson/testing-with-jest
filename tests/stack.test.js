@@ -19,7 +19,10 @@ test('peek on stack with two or more elements returns the top element', () => {
 });
 
 test('adding 3 elements to empty stack and then removing them should result in an empty stack', () => {
- 
+  while(stack.peek() !== undefined) {
+    stack.pop();
+  }
+  
   stack.push("hej");
   stack.push("tja");
   stack.push("tjena");

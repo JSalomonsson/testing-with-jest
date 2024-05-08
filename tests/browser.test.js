@@ -44,6 +44,9 @@ describe('Check stack content after pushing and poping an item', () => {
     await alert.accept();
 
     let pop = await driver.findElement(By.id('pop'));
+    await pop.click();
+    alert = await driver.switchTo().alert();
+    await alert.accept();
    
     let stack = await driver.findElement(By.id('top_of_stack')).getText();
     expect(stack).toEqual(itemAlreadyIn);
