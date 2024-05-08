@@ -17,3 +17,14 @@ test('peek on stack with two or more elements returns the top element', () => {
     expect(stack.peek()).toBeDefined();
     expect(stack.peek()).toBe(42);
 });
+
+test('adding 3 elements to empty stack and then removing them should result in an empty stack', () => {
+ 
+  stack.push("hej");
+  stack.push("tja");
+  stack.push("tjena");
+  stack.pop();
+  stack.pop();
+  stack.pop();
+  expect(stack.peek()).toBeUndefined();
+});

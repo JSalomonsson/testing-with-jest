@@ -32,3 +32,20 @@ describe('Clicking "Pusha till stacken"', () => {
 		await alert.accept();
 	});
 });
+
+describe('Check stack content after pushing and poping an item', () => {
+  it('should contain the item that was already in the stack', async () => {
+    let itemAlreadyIn = await driver.findElement(By.id('top_of_stack')).getText(); 
+    
+    let push = await driver.findElement(By.id('push'));
+    await push.click();
+    let alert = await driver.switchTo().alert();
+    await alert.sendKeys("Hamburgare");
+    await alert.accept();
+
+    let pop = await driver.findElement(By.id('pop'));
+   
+    let stack = await driver.findElement(By.id('top_of_stack')).getText();
+    expect(stack).toEqual(itemAlreadyIn);
+  }); 
+});
